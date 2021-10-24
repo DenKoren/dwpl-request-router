@@ -1,0 +1,45 @@
+{
+  "name": "denkoren/dwpl-request-router",
+  "description": "Custom requests router for WordPress plugins",
+  "homepage": "https://github.com/DenKoren/dwpl-request-router",
+  "type": "library",
+  "license": "GPL-3.0-or-later",
+
+  "version": "0.1.0",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+
+  "authors": [
+    {
+      "name": "Denis Korenevskiy",
+      "homepage": "https://github.com/DenKoren",
+      "role": "Developer"
+    }
+  ],
+
+  "support": {
+    "issues": "https://github.com/DenKoren/dwpl-request-router/issues",
+    "source": "https://github.com/DenKoren/dwpl-request-router"
+  },
+
+  "keywords": [
+      "wordpress",
+      "url",
+      "request",
+      "router"
+  ],
+
+  "autoload": {
+    "psr-4": {
+      "DWPL\\RequestRouter\\": "src/"
+    }
+  },
+
+  "require": {
+    "php": ">=7.4"
+  },
+
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}
