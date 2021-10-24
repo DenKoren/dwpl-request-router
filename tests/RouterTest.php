@@ -101,4 +101,22 @@ final class RouterTest extends TestCase
         $this->R->addRoute(["a"], $R2);
         $this->R->handle(["a", "b", "c"]);
     }
+
+    public function uriSplitDataProvider() : array
+    {
+        return [
+            "empty" => ["", ['']],
+            "root" => ["/", ['']],
+            "no_subs" => ['/a', ['a']],
+            "dir" => ['/a/', ['a', '']],
+            "subs" => ['/b/c/f', ['b', 'c', 'f']],
+            "no_/_prefix" => ['v/r', ['v', 'r']],
+        ];
+    }
+
+    /** @dataProvider uriSplitDataProvider */
+    public function testURISplit(string $uri, array $expected_result) {
+        $result = \DWPL\RequestRouter\Router::splitURI($uri);
+        $this->assertEquals($expected_result, $result);
+    }
 }
